@@ -1,10 +1,10 @@
 package main;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.util.Date;
+import java.io.IOException; // Per gestire le eccezioni.
+import java.io.PrintWriter; // Per leggere e assegnare l'output in arrivo dal client.
+import java.net.ServerSocket; // Per settare la porta del server.
+import java.net.Socket; // Per utilizzare i metodi dell'oggetto Socket
+import java.util.Date; // Da modificare, ed eventualmente cancellare, sostituendolo con oggetto utile ai fini del progetto.
 
 /**
  * A TCP server that runs on port 9090.  When a client connects, it
@@ -23,8 +23,7 @@ public class ServerCup {
             while (true) {
                 Socket socket = listener.accept();
                 try {
-                    PrintWriter out =
-                        new PrintWriter(socket.getOutputStream(), true);
+                    PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
                     out.println(new Date().toString());
                 } finally {
                     socket.close();
