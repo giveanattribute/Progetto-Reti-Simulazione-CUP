@@ -6,7 +6,10 @@ public class Paziente {
 	String codice_prenotazione;
 	
 	
-	
+	public Paziente()
+	{
+		
+	}
 	
 	public Paziente(String nome, String cognome, String codice_prenotazione) {
 		super();
